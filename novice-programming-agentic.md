@@ -14,9 +14,12 @@ AI programming agents have profoundly disrupted computing education. Rather than
 
 **ACM Reference Format:** Kathi Fisler, Shriram Krishnamurthi, and Michael Littman. 2026. Teaching Novice Computing and Programming in the Agentic AI Era. 1, 1 (January 2026), 6 pages. https://doi.org/10.1145/3838277
 
-## 1 Introduction
+## 1. Introduction
 
 Grace Hopper won. She said, of producing the first compiler, “I had a running compiler, and nobody would touch it because, they carefully told me, computers could only do arithmetic; they could not do programs”;[^1] yet we all depend on compilers now. Later, Hopper’s FLOW-MATIC (which inspired COBOL) was marketed on “the use of English words” [10]. This idea too was widely mocked—for decades. Today, we can literally write programs using natural languages.[^2] This is a remarkable technological arc.
+
+[^1]: https://www.computinghistory.org.uk/det/5487/Grace-Hopper-completes-the-A-0-Compiler/
+[^2]: https://x.com/karpathy/status/1617979122625712128
 
 Yet, instead of celebration, much of the conversation we hear about computing education in the era of AI-programming agents exudes panic under siege: learning attacked as students submit AI-generated solutions, faculty lost about how to respond, frantic searches for AI-proof programming assignments. Computing education is on the defensive. As educators, however, we must do more than design “defeat devices”. As we strategize for the huge challenge of the present moment, we should also embrace its tremendous opportunity. We argue that introductory computing can (and should) be deeply infused with the practices of (currently upper-level) software engineering, with adaptations to support the learning needs of novice computing students building programs with agents.
 
@@ -26,7 +29,7 @@ We frame this proposal through a metaphor that should be helpful to experienced 
 
 *What is Required (It’s Flaky!)* The compiler is also *flaky*, for numerous reasons. Traditional compilers “preserve meaning”, but the “meaning” of natural language is fuzzy and ambiguous. Prose can also be sloppy in ways that traditional compilers simply refuse to accept. The models that translate prompts have weaknesses and problems of their own. The system is non-deterministic. Every one of these aspects creates burdens that traditional compilers do not impose. Whereas traditional compilers go to great lengths to provide a clean abstraction, the flaky compiler does not.
 
-## 2 Is This New?
+## 2. Is This New?
 
 On the one hand, this flakiness sounds like (and is) a problem. On the other hand: how new is this, really? Humans aren’t perfect at implementation, either. We program with colleagues who make mistakes. Sometimes the colleague making a mistake is actually ourself, from a little while in the past. Our requirements are ambiguous, or we misinterpret them. Requirements change, and the act of building a system itself alters our understanding of its requirements. Brooks argued 40 years ago that there is no silver bullet for developing software [2] because the essence of creating software lies in conceptual design and moving from semi-formal ideas to formal representations in code; agents don’t make that problem go away.
 
@@ -36,7 +39,7 @@ With AI-programming agents, software engineering education must start far earlie
 
 Unfortunately, we lack a knowledge-base on how to teach software engineering to novices. Because getting code onto the page was considered hard, even basic topics like testing were often maligned as being too advanced for novices. Now that getting lines of code onto the page is too easy, topics such as these must be at the forefront. Part of that requires reconsidering what it means to be educated in computing.
 
-## 3 Rethinking the Goal of Computing Education
+## 3. Rethinking the Goal of Computing Education
 
 We believe the key differentiator of a trained computing person is going to be the ability to stand behind the products they produce. Decades ago, David Lorge Parnas pointed out how, while other engineering disciplines provided guarantees, software came with disclaimers [9]—and exhorted us to do better. Until recently, this call was largely ignored. But now, if anyone can easily produce a disclaimer-riddled product, the differentiator becomes producing an engineered artifact: an object that comes with quality assurances.
 
@@ -44,9 +47,13 @@ These assurances will cover the many dimensions of software: not only basic corr
 
 As a concrete example, consider user interfaces. Previously, they required a significant amount of programming experience to construct and modify, and hence were often an upper-level topic. Now, a novice can generate a sophisticated-looking interface effortlessly. But is it a *good* one? Students who cannot manually program an interface can still peer-review each others’ and rapidly iterate on feedback, arriving at something closer to a usable product—and in the process, concretely observe the difference between visual flash and usability.
 
-## 4 Redesigning Introductory Courses
+## 4. Redesigning Introductory Courses
 
 Putting these experiences in the hands of novice students, and preparing them for a mindset centered around assurance, requires rethinking introductory computing education. A subtle but key feature is that the “compiler” is actually a *synthesizer*: what we write in prose are not really programs but specifications. That is, any choice not pinned down is a degree of freedom for the (flaky) agent. Running the same prompt *𝑁* times can result in *𝑁* wildly different implementations—perhaps even in different languages. Thus, part of the art of using agents effectively is *constraining what they do*. This insight is not novel to us. Prominent agentic programmers such as Andrej Karpathy[^3] and Simon Willison[^4] and educators such as John Regehr[^5] have spoken and written about the intermediate specifications that they provide to constrain agents and make their outputs auditable.
+
+[^3]: https://www.aibuilderclub.com/blog/karpathy-agentic-engineering
+[^4]: https://simonwillison.net/2026/Feb/23/agentic-engineering-patterns/
+[^5]: https://john.regehr.org/writing/zero_dof_programming.html
 
 We envision teaching introductory students an appropriately scaled down set of related techniques. Our emphasis would not be on “prompts”. Rather, students would now focus on all the other aspects of producing software: program plans, testing plans, test suites, properties, constraints, and more. They can think hard about different forms of data organization and their consequences for what questions can be computed and with what performance trade-offs. We can define a semi-structured format for these specifications, which effectively become a meaningful (gradable!) intermediate level between students and code. The “prompt” goes from just a simple natural language description of a task to a complex, multi-faceted description that captures all these viewpoints and features. While agents can produce these specifications too, it is far too easy to sign off on what they produce without knowing for sure that the output matches the *intended* task. Both peer reviews and new forms of conceptual exam questions can help students realize these difficulties and thus engage in this work themselves. They would also give students level-appropriate metrics for what it means to “stand behind” code that they produced.
 
@@ -62,7 +69,7 @@ The less radical but still significant modification is to interweave design and 
 
 Undertaking either redesign calls for significant research. It may seem impossible to teach introductory computing this way, but that could also just be an artifact of our own expert blind spots [7]. Instead we have to see the world through the eyes of a novice to determine what can and can’t work for them, without the distorting lens of our own expertise and experience. At Brown, we ran a course in Spring 2026 for just this purpose with students who had already had a semester of programming. We are assembling our findings, but our ideas about specifications as viable intermediate representations arise from that experience.
 
-## 5 A Call for Action
+## 5. A Call for Action
 
 Computing education must respond to the quality and assurance aspects of agentic programming. Crucially, these needs are not limited to future professional software engineers. A social studies student, say, who takes only one computing course, then goes off to create programs that may be used in decision-making settings, may never take that advanced “software testing” course, so their single exposure should make sure they can both identify what can go wrong and know how to guard against it. This has *always* been true, but until recently, the scope of systems an undertrained student could produce was often limited. Now, even small prompts can produce whole systems, whose fancy interfaces can easily mask various subtle underlying weaknesses. As researchers have long observed with spreadsheets and other end-user platforms [3, 5, 8], significant advances in tooling make even casual programmers much more powerful—and hence, unwittingly, much more dangerous.
 
@@ -97,9 +104,3 @@ A common refrain from introductory programming instructors is, “I don’t teac
 [11] Jacqueline L. Whalley, Raymond Lister, Errol Thompson, Tony Clear, Phil Robbins, P. K. Ajith Kumar, and Christine Prasad. 2006. An Australasian study of reading and comprehension skills in novice programmers, using the Bloom and SOLO taxonomies. In *Proceedings of the 8th Australasian Conference on Computing Education - Volume 52* (Hobart, Australia) *(ACE ’06)*. Australian Computer Society, Inc., AUS, 243–252.
 
 [12] Benjamin Xie, Dastyni Loksa, Greg L. Nelson, Matthew J. Davidson, Dongsheng Dong, Harrison Kwik, Alex Hui Tan, Leanne Hwa, Min Li, and Amy J. Ko. 2019. A theory of instruction for introductory programming skills. *Computer Science Education* 29, 2-3 (2019), 205–253. arXiv:https://doi.org/10.1080/08993408.2019.1565235 doi:10.1080/08993408.2019.1565235
-
-[^1]: https://www.computinghistory.org.uk/det/5487/Grace-Hopper-completes-the-A-0-Compiler/
-[^2]: https://x.com/karpathy/status/1617979122625712128
-[^3]: https://www.aibuilderclub.com/blog/karpathy-agentic-engineering
-[^4]: https://simonwillison.net/2026/Feb/23/agentic-engineering-patterns/
-[^5]: https://john.regehr.org/writing/zero_dof_programming.html
